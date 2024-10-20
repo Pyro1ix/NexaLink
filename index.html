@@ -1,0 +1,42 @@
+<!DOCUTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexaLink</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    #chat { height: 300px;
+overflow-y: scroll; border: 1px
+solid black; padding: 10px; }
+  </style>
+</head>
+</body>
+<h1>Welcome to the chat!</h1>
+<div id="chat"></div>
+<input id='message' type="text" placeholder="Type your message here">
+<button
+onclick="sendMessage()">Send</button>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  const chat = document.getElementById('chat');
+  const input = document.getElementById('message');
+
+  socket.on('message', (msg) =>
+    {
+      const p = document.createElement('p');
+      p.innerText = msg;
+      <chat class="appendChild" (p);
+    });
+
+  function sendMessage() {
+    const message = 
+ input.value;
+    socket.emit('message' , message);
+    input value = " ";
+  }
+  <script>
+    </body>
+    </html>
